@@ -1,0 +1,87 @@
+
+.work-section{
+    background: #ebe5e7;
+    padding: 10px 0 40px 0 !important;
+}
+.heading {
+    font-size: 120px;
+    color: rgba(86, 74, 74, 0.639);
+    font-weight: bolder;
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.subtitle {
+    font-weight: bolder;
+    font-size: 60px;
+    color: yellow;
+    z-index: 1;
+    position: relative;
+}
+
+.gap{
+  height: 20px;
+  max-height: 100%;
+}
+
+.portfolio-table {
+  width: 100%;
+  margin: auto;
+  border-collapse: collapse;
+  color: #4556e8 !important;
+  font-size: 30px;
+  font-weight: bolder;
+  padding-top: 20px !important;
+}
+
+.portfolio-table tbody tr {
+  position: relative;
+  overflow: hidden;
+}
+
+/* slide layer */
+.portfolio-table tbody tr::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(12, 12, 12, 0.906);
+  transition: left 0.4s ease;
+  z-index: 0;
+}
+
+/* hover slide-in */
+.portfolio-table tbody tr:hover::before {
+  left: 0;
+}
+
+/* keep text above layer */
+.portfolio-table td {
+  position: relative;
+  padding: 16px;
+  border-bottom: 1px solid #222;
+  z-index: 1;
+}
+
+/* link style */
+.portfolio-table a {
+  color: rgb(231, 228, 228) !important;
+  text-decoration: none;
+  position: relative;
+  z-index: 1;
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .portfolio-table {
+    font-size: 15px;
+  }
+
+  .portfolio-table td {
+    padding: 12px;
+  }
+}

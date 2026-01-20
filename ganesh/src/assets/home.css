@@ -1,0 +1,111 @@
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  text-align: center;
+  background: #ebe5e7;
+  transition: opacity .6s ease, transform .6s ease;
+  opacity: 1;
+}
+
+/* Before reveal */
+.hero:not(.reveal) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+/* After reveal */
+.hero.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Title text */
+.subtitle {
+  font-weight: bolder;
+  font-size: 50px;
+  z-index: 1;
+  position: relative;
+  line-height: 1.4;
+  max-width: 1100px;
+}
+
+/* Normal text */
+.normal {
+  color: rgb(21, 21, 21);
+}
+
+/* Highlight colors */
+.highlight-primary {
+  color: rgb(45, 125, 237) !important;
+}
+
+.highlight-secondary {
+  color: rgb(229, 68, 68) !important;
+}
+
+/* Typing cursor */
+.typing::after {
+  content: "|";
+  margin-left: 6px;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+/* Buttons */
+.btn-section {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  background: linear-gradient(45deg, rgb(45, 125, 237), rgb(229, 68, 68));
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 238, 232, 0.3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 238, 232, 0.5);
+}
+
+.btn-section a {
+  text-decoration: none;
+}
+
+/* Icons */
+.icon {
+  font-size: 18px;
+}
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .subtitle {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .subtitle {
+    font-size: 24px;
+  }
+}
