@@ -40,11 +40,11 @@
 
 /* Highlight colors */
 .highlight-primary {
-  color: rgb(45, 125, 237) !important;
+  color: rgb(237, 45, 45) !important;
 }
 
 .highlight-secondary {
-  color: rgb(229, 68, 68) !important;
+  color: rgb(233, 218, 14) !important;
 }
 
 /* Typing cursor */
