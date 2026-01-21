@@ -249,7 +249,7 @@ html, body {
 }
 
 .bitemoji img {
-  height: 50px;
+  height: 450px;
   width: auto;
   position: absolute;
   opacity: 1;             /* full opacity by default */
