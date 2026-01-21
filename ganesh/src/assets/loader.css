@@ -14,7 +14,7 @@
 .loader-bar {
   width: 200px;
   height: 10px;
-  background-color: #fff;
+  background-color: whitesmoke;
   animation: loader-animation 2s ease-in-out forwards;
 }
 

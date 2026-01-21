@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import "../assets/skill.css";
+import img from '../assets/images/skills.png'
 
 const tokens = [
   "HTML", "CSS", "BOOTSTRAP", "JAVASCRIPT", "REACT", "WORDPRESS",
@@ -16,7 +17,8 @@ const frontend = [
   { name: "Tailwind", src: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAPFBMVEX////G6fxsyvk/v/g4vfhhyPmz4vuK1PoAtfckufgvu/hTxPn6/f+h2/tGwPjS7v255fxMwviT1/qn3vsZjXhWAAAAbElEQVR4AeWOCQqAMAwEq11r06b3//9qAwiI0QfowHINC2N+yLJabE53uycgUGTtF11CmDqLLVdZ57iJhSt9V+4cCQB5a1RGJgr9FrrW866GbmpoGylISlNC3RxnsbY+hLbX0GSJIKE6zOajHN4ZA8/fNs9XAAAAAElFTkSuQmCC" },
   { name: "JavaScript", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
   { name: "React", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
-  { name: "WordPress", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
+  { name: "JQuery", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jquery/jquery-original.svg"},
+  { name: "Three.js", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/threejs/threejs-original.svg"}
 ];
 
 const backend = [
@@ -40,12 +42,14 @@ const dataTools = [
 ];
 
 const others = [
+  { name: "WordPress", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg" },
   { name: "Git", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" },
   { name: "Github", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" },
   { name: "Linux", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg" },
   { name: "VS Code", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/visualstudio/visualstudio-original.svg" },  
   { name: "Postman", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg" },
   { name: "Figma", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" },
+  { name: "Blender", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/blender/blender-original.svg"},
   { name: "Canva", src: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg"}
 ];
 
@@ -79,20 +83,24 @@ const Skills = () => {
   );
 
   return (
-    <div className="skill-body">
+    <div className="skill-body wave">
       <div className="skills-container">
         <div className="stuck-grid">
-          {tokens.map((t, i) => <div key={i} className="grid-item">{t}</div>)}
-          
+          {tokens.map((t, i) => <div key={i} className="grid-item">{t}</div>)} 
         </div>
       </div>
 
-      <div className="skills-icons" ref={iconRef}>
-        {Render("Frontend", frontend)}
-        {Render("Backend & APIs", backend)}
-        {Render("Databases", database)}
-        {Render("Data Science Tools", dataTools)}
-        {Render("Other Tools", others)}
+      <div className="skill-2">
+        <div className="skills-icons" ref={iconRef}>
+          {Render("Frontend", frontend)}
+          {Render("Backend & APIs", backend)}
+          {Render("Databases", database)}
+          {Render("Data Science Tools", dataTools)}
+          {Render("Other Tools", others)}
+        </div>
+        <div className="bitemoji">
+          <img src={img} alt="" />
+        </div>
       </div>
     </div>
   );

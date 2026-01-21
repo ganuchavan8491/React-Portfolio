@@ -6,6 +6,7 @@ import Loader from './components/Loader'
 import Work from './components/Work'
 import Skills from './components/Skills'
 import LionScene from './components/Lionscene'
+import Contact from './components/Contact'
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <Home/>
       <Skills/>
       <Work/>
+      <Contact/>
       <Footer/>
     </div>
   )
