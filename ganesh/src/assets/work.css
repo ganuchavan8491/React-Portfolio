@@ -3,6 +3,12 @@
     background: whitesmoke;
     padding: 10px 0 40px 0 !important;
 }
+
+.title{
+  padding-top: 50px;
+  padding-bottom: 30px;
+}
+
 .heading {
     font-size: 120px;
     color: rgba(86, 74, 74, 0.639);

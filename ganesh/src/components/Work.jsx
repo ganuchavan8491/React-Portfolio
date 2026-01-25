@@ -43,6 +43,12 @@ const Work = () => {
               <td>Python Tkinter App</td>
             </tr>
 
+            <tr onClick={() => openLink("https://berojagar-engineer.vercel.app/")}>
+              <td>2026</td>
+              <td>Berojagar Engineer</td>
+              <td>Personal Blog Website</td>
+            </tr>
+
             <tr onClick={() => openLink("https://balugraphy-official-czek.vercel.app/")}>
               <td>2026</td>
               <td>Balugraphy Official</td>
