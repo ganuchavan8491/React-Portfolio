@@ -7,6 +7,12 @@
 .title{
   padding-top: 50px;
   padding-bottom: 30px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+  animation: fadeIn 1.5s ease-in;
 }
 
 .heading {
