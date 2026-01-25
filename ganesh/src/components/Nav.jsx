@@ -12,7 +12,7 @@ const Nav = () => {
             </a>
         </div>
 
-        <div className="title">
+        <div className="header-logo">
             <h1 className="subtitle">WHO IS !</h1>
             <div className="heading">GANESH</div>
         </div>
