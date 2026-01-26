@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 10px;
   text-align: center;
   background: whitesmoke;
   transition: opacity .6s ease, transform .6s ease;
@@ -97,15 +97,40 @@
   font-size: 18px;
 }
 
-/* 📱 Mobile */
+/* 📱 Mobile & Tablet */
 @media (max-width: 768px) {
   .subtitle {
     font-size: 32px;
   }
+  .btn-section {
+    margin-top: 30px;
+  }
+  .btn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .icon {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 480px) {
+  .hero {
+    padding: 4px;
+  }
   .subtitle {
     font-size: 24px;
+  }
+  .btn-section {
+    margin-top: 25px;
+    gap: 15px;
+  }
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 20px;
+  }
+  .icon {
+    font-size: 14px;
   }
 }

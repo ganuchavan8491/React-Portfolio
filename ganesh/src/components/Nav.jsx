@@ -1,10 +1,12 @@
 import React from 'react'
 import '../assets/nav.css'
 import profileImg from '../assets/images/navlogo.png'
+import NavParticles from './NavParticles'
 
 const Nav = () => {
   return (
     <>
+    <NavParticles />
     <div className="nav">
         <div className="left-section">
             <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">

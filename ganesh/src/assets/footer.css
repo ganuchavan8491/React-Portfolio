@@ -97,9 +97,38 @@
   transform: scale(1.2);
 }
 
-/* mobile */
+/* tablet */
 @media (max-width: 768px) {
   .footer-text {
-    font-size: 1.2rem;
+    font-size: 32px;
+  }
+  .copyrights {
+    font-size: 20px;
+    padding: 15px !important;
+  }
+  .hover-icon .icon {
+    font-size: 40px;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+    .footer {
+        padding: 5px;
+        padding-bottom: 2px;
+    }
+  .footer-text {
+    font-size: 24px;
+    border-bottom-width: 2px;
+  }
+  .copyrights {
+    font-size: 16px;
+    padding: 10px !important;
+  }
+  .hover-icon {
+      margin: 0 4px;
+  }
+  .hover-icon .icon {
+    font-size: 30px;
   }
 }

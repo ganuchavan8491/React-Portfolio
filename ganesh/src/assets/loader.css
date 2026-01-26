@@ -26,3 +26,37 @@
     width: 200px;
   }
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .loader-bar {
+    width: 150px;
+    animation: loader-animation-tablet 2s ease-in-out forwards;
+  }
+
+  @keyframes loader-animation-tablet {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 150px;
+    }
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .loader-bar {
+    width: 100px;
+    animation: loader-animation-mobile 2s ease-in-out forwards;
+  }
+
+  @keyframes loader-animation-mobile {
+    0% {
+      width: 0;
+    }
+    100% {
+      width: 100px;
+    }
+  }
+}

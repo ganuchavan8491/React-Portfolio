@@ -48,6 +48,9 @@
 
 /* Button matches hero gradient */
 .contact-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: transparent;
   color: black;
   border: 2px solid black;
@@ -63,4 +66,46 @@
 .contact-btn:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 25px rgba(0, 238, 232, 0.5);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .contact-container {
+    padding: 40px 15px;
+    min-height: 50vh;
+  }
+  .contact-title {
+    font-size: 32px;
+    margin-bottom: 20px;
+  }
+  .contact-form textarea {
+    font-size: 16px;
+  }
+  .contact-btn {
+    padding: 12px 28px;
+    font-size: 16px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .contact-container {
+    padding: 30px 10px;
+    min-height: 40vh;
+  }
+  .contact-title {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+  .contact-form {
+    gap: 15px;
+  }
+  .contact-form textarea {
+    font-size: 14px;
+    padding: 12px;
+  }
+  .contact-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
 }

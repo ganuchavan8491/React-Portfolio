@@ -262,3 +262,74 @@ html, body {
   transform: scale(1.3);   /* zoom on hover */
   z-index: 10;
 }
+
+/* Tablet */
+@media (max-width: 768px) {
+  .stuck-grid {
+    grid: repeat(2, 20dvh) / repeat(2, 25dvw);
+  }
+  .stuck-grid > .grid-item {
+    font-size: 6vmin;
+  }
+  .stuck-grid > .grid-item > b {
+    font-size: 18vmin;
+  }
+  .skills-icons {
+    margin-top: 60px;
+    padding-left: 15px;
+  }
+  .skills-icons h2 {
+    font-size: 24px;
+  }
+  .icon-row {
+    gap: 20px;
+  }
+  .icon-item {
+    width: 55px;
+    height: 55px;
+  }
+  .bitemoji img {
+    height: 350px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .stuck-grid {
+    grid: repeat(2, 25dvh) / repeat(2, 40dvw);
+  }
+  .stuck-grid > .grid-item {
+    font-size: 8vmin;
+  }
+  .stuck-grid > .grid-item > b {
+    font-size: 22vmin;
+  }
+  .skill-2 {
+    flex-direction: column;
+    align-items: center;
+  }
+  .skills-icons {
+    margin-top: 40px;
+    padding-left: 10px;
+    text-align: center;
+  }
+  .skills-icons h2 {
+    font-size: 20px;
+  }
+  .icon-row {
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .icon-item {
+    width: 50px;
+    height: 50px;
+  }
+  .bitemoji {
+    margin-top: 20px;
+  }
+  .bitemoji img {
+    position: static;
+    height: 250px;
+  }
+}

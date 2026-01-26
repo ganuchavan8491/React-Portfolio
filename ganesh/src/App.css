@@ -3,3 +3,38 @@ body{
   padding: 0;
   background : white !important;
 }
+
+.cat {
+  position: fixed;
+  bottom: 40px;
+  width: 130px;
+  animation: walkMove 15s linear infinite;
+  pointer-events: none;
+  z-index: 9999;
+  mix-blend-mode: multiply; /* important */
+}
+
+@keyframes walkMove {
+  from { transform: translateX(calc(100vw + 200px)); }
+  to { transform: translateX(-200px); }
+}
+
+.cat.flip {
+  transform: scaleX(-1);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .cat {
+    bottom: 20px;
+    width: 100px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .cat {
+    bottom: 10px;
+    width: 80px;
+  }
+}

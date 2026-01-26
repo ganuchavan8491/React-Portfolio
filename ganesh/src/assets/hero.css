@@ -1,0 +1,33 @@
+.hero-sec {
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  padding: 40px;
+}
+
+
+canvas {
+  border-radius: 28px;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .hero-sec {
+    height: 100vh;
+    padding: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .hero-sec {
+    height: 80vh;
+    padding: 10px;
+  }
+  canvas {
+    border-radius: 18px;
+  }
+}
