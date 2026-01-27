@@ -5,7 +5,7 @@ import NavParticles from './NavParticles'
 import cv from '../assets/files/ganeshchavan.pdf'
 
 const resume = () => {
-  window.open("https://your-resume-link.com", "_blank");
+  window.open( cv, "_blank");
 }
 
 const Nav = () => {
