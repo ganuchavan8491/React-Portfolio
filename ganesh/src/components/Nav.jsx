@@ -2,7 +2,7 @@ import React from 'react'
 import '../assets/nav.css'
 import profileImg from '../assets/images/navlogo.png'
 import NavParticles from './NavParticles'
-import cv from '../assets/files/ganeshchavan.pdf'
+import cv from '../assets/files/GaneshResume.pdf'
 
 const resume = () => {
   window.open( cv, "_blank");
