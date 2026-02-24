@@ -4,13 +4,16 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #fafafa;
+  background: transparent;
   padding: 40px;
 }
 
 
 canvas {
   border-radius: 28px;
+  box-shadow: none;
+  border: none;
+  outline: none;
 }
 
 /* Tablet */

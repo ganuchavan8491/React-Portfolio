@@ -1,5 +1,5 @@
 .work-section{
-    background: whitesmoke;
+    background: transparent;
     padding: 10px 0 40px 0 !important;
 }
 
@@ -15,7 +15,7 @@
 
 .heading {
     font-size: 120px;
-    color: rgba(86, 74, 74, 0.639);
+    color: rgba(28, 47, 93, 0.28);
     font-weight: bolder;
     position: absolute;
     z-index: 0;
@@ -26,7 +26,7 @@
 .subtitle {
     font-weight: bolder;
     font-size: 60px;
-    color: yellow;
+    color: #1f3570;
     z-index: 1;
     position: relative;
 }
@@ -40,7 +40,7 @@
   width: 100%;
   margin: auto;
   border-collapse: collapse;
-  color: #4556e8 !important;
+  color: #24428d !important;
   font-size: 30px;
   font-weight: bolder;
   padding-top: 20px !important;
@@ -59,7 +59,7 @@
   left: -100%;
   width: 100%;
   height: 100%;
-  background: rgba(12, 12, 12, 0.906);
+  background: linear-gradient(120deg, rgba(35, 66, 132, 0.96), rgba(241, 90, 61, 0.94));
   transition: left 0.4s ease;
   z-index: 0;
 }
@@ -73,13 +73,13 @@
 .portfolio-table td {
   position: relative;
   padding: 16px;
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid rgba(30, 49, 95, 0.35);
   z-index: 1;
 }
 
 /* link style */
 .portfolio-table a {
-  color: rgb(231, 228, 228) !important;
+  color: #f4f8ff !important;
   text-decoration: none;
   position: relative;
   z-index: 1;

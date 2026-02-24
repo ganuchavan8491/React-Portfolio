@@ -6,7 +6,7 @@
   align-items: center;
   padding: 10px;
   text-align: center;
-  background: whitesmoke;
+  background: transparent;
   transition: opacity .6s ease, transform .6s ease;
   opacity: 1;
 }
@@ -31,6 +31,7 @@
   position: relative;
   line-height: 1.4;
   max-width: 1100px;
+  color: #0f1c3c;
 }
 
 /* Normal text */
@@ -40,11 +41,11 @@
 
 /* Highlight colors */
 .highlight-primary {
-  color: rgb(237, 45, 45) !important;
+  color: #f15a3d !important;
 }
 
 .highlight-secondary {
-  color: rgb(233, 218, 14) !important;
+  color: #2f6fe3 !important;
 }
 
 /* Typing cursor */
@@ -69,7 +70,7 @@
 }
 
 .btn {
-  background: linear-gradient(45deg, rgb(45, 125, 237), rgb(229, 68, 68));
+  background: linear-gradient(120deg, #2f6fe3, #f15a3d);
   color: white;
   border: none;
   padding: 15px 30px;
@@ -77,7 +78,7 @@
   font-weight: bold;
   border-radius: 25px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 238, 232, 0.3);
+  box-shadow: 0 8px 20px rgba(39, 74, 138, 0.28);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -85,7 +86,7 @@
 
 .btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 238, 232, 0.5);
+  box-shadow: 0 12px 26px rgba(39, 74, 138, 0.38);
 }
 
 .btn-section a {

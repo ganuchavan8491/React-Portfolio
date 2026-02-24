@@ -1,10 +1,17 @@
 body{
     overflow-x: hidden;
-    background: white;
+    background: transparent;
 }
 
 #world {
 display: block;
+}
+
+#world canvas {
+    display: block;
+    border: none !important;
+    outline: none !important;
+    box-shadow: none !important;
 }
 
 @media (max-width: 480px) {

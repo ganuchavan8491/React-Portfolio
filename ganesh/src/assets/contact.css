@@ -1,5 +1,5 @@
 .contact-container {
-  background: url("./images/msg.gif") no-repeat center center/cover;
+  background: transparent;
   padding: 60px 20px;
   min-height: 60vh;
   display: flex;
@@ -14,7 +14,7 @@
   font-size: 40px;
   font-weight: 700;
   margin-bottom: 30px;
-  color: rgb(21, 21, 21);
+  color: #12224a;
 }
 
 /* Form */
@@ -31,19 +31,19 @@
   width: 100%;
   padding: 15px;
   border-radius: 14px;
-  border: none;
+  border: 1px solid rgba(35, 66, 132, 0.25);
   outline: none;
-  background: transparent;
+  background: rgba(255, 255, 255, 0.64);
   font-size: 18px;
   font-weight: 500;
-  color: rgb(21, 21, 21);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  color: #162856;
+  box-shadow: 0 8px 20px rgba(23, 44, 89, 0.16);
   transition: 0.3s ease;
 }
 
 .contact-form textarea:focus {
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 238, 232, 0.4);
+  box-shadow: 0 10px 24px rgba(47, 111, 227, 0.34);
 }
 
 /* Button matches hero gradient */
@@ -51,21 +51,21 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: transparent;
-  color: black;
-  border: 2px solid black;
+  background: linear-gradient(120deg, #2f6fe3, #f15a3d);
+  color: white;
+  border: none;
   padding: 15px 32px;
   font-size: 18px;
   font-weight: bold;
   border-radius: 28px;
   transition: all 0.3s ease;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 238, 232, 0.3);
+  box-shadow: 0 8px 20px rgba(39, 74, 138, 0.28);
 }
 
 .contact-btn:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 25px rgba(0, 238, 232, 0.5);
+  box-shadow: 0 12px 26px rgba(39, 74, 138, 0.38);
 }
 
 /* Tablet */

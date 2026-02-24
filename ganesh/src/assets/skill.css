@@ -1,6 +1,6 @@
 .skill-body{  
-  background : white ;
-  color: black;
+  background: transparent;
+  color: #1b2f64;
 }
 
 @keyframes zoom-in {
@@ -22,13 +22,17 @@
 }
 
 .stuck-grid {
-  block-size: 100svh;
+  block-size: 72svh;
   perspective: 2000px;
   transform-style: preserve-3d;
 
   display: grid;
-  grid: repeat(2, 15dvh) / repeat(2, 15dvw);;
+  grid-template-columns: repeat(4, minmax(120px, 1fr));
+  grid-template-rows: repeat(4, minmax(58px, 1fr));
+  gap: clamp(12px, 2vw, 24px);
+  padding: 18px clamp(16px, 4vw, 46px);
   place-items: center;
+  align-content: center;
 
   position: sticky;
   top: 0;
@@ -37,14 +41,15 @@
 
   /* added (no breaking) */
   z-index: 99;
-  background: white;
+  background: transparent;
   isolation: isolate;
 
   > .grid-item {
     transform-style: preserve-3d;
 
-    font-size: 5vmin;
+    font-size: clamp(1rem, 2.5vw, 2rem);
     font-weight: bolder;
+    opacity: 0.9;
 
     text-wrap: nowrap;
 
@@ -173,27 +178,6 @@
   }
 }
 
-@layer support {
-  * {
-    box-sizing: border-box;
-    margin: 0;
-  }
-
-  html {
-    block-size: 100%;
-    color-scheme: dark light;
-  }
-
-  body {
-    min-block-size: 400vh;
-    font-family: system-ui, sans-serif;
-  }
-}
-
-html, body {
-  min-height: 400vh;
-}
-
 .skills-3d {
   height: 100vh;
   position: relative;
@@ -212,6 +196,7 @@ html, body {
   padding: 5px;
   font-weight: bolder;
   font-size: 30px;
+  color: #1e3773;
 }
 
 .icon-row {
@@ -228,6 +213,9 @@ html, body {
   transform: translateY(10px);
   filter: blur(4px);
   transition: .45s ease;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 6px 18px rgba(30, 55, 115, 0.1);
 }
 
 
@@ -266,10 +254,14 @@ html, body {
 /* Tablet */
 @media (max-width: 768px) {
   .stuck-grid {
-    grid: repeat(2, 20dvh) / repeat(2, 25dvw);
+    block-size: 66svh;
+    grid-template-columns: repeat(3, minmax(90px, 1fr));
+    grid-template-rows: repeat(4, minmax(52px, 1fr));
+    gap: 12px;
+    padding: 14px 14px;
   }
   .stuck-grid > .grid-item {
-    font-size: 6vmin;
+    font-size: clamp(0.9rem, 2.8vw, 1.3rem);
   }
   .stuck-grid > .grid-item > b {
     font-size: 18vmin;
@@ -296,10 +288,14 @@ html, body {
 /* Mobile */
 @media (max-width: 480px) {
   .stuck-grid {
-    grid: repeat(2, 25dvh) / repeat(2, 40dvw);
+    block-size: 58svh;
+    grid-template-columns: repeat(2, minmax(120px, 1fr));
+    grid-template-rows: repeat(5, minmax(44px, 1fr));
+    gap: 10px;
+    padding: 10px 10px;
   }
   .stuck-grid > .grid-item {
-    font-size: 8vmin;
+    font-size: clamp(0.82rem, 3.5vw, 1rem);
   }
   .stuck-grid > .grid-item > b {
     font-size: 22vmin;
