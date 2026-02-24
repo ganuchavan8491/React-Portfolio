@@ -21,14 +21,12 @@ function HeroCard() {
   const texture = useTexture(isMobile ? heroMob : heroDesk);
   const ref = useRef();
 
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const [hover, setHover] = useState(false);
-
-  useFrame(() => {
+  useFrame((state) => {
     if (!ref.current) return;
 
-    const tx = hover ? mouse.x * 0.18 : 0;
-    const ty = hover ? mouse.y * 0.18 : 0;
+    const t = state.clock.getElapsedTime();
+    const tx = Math.sin(t * 0.45) * 0.05;
+    const ty = Math.cos(t * 0.35) * 0.04;
 
     ref.current.rotation.y += (tx - ref.current.rotation.y) * 0.1;
     ref.current.rotation.x += (ty - ref.current.rotation.x) * 0.1;
@@ -38,12 +36,6 @@ function HeroCard() {
     <mesh
       ref={ref}
       scale={isMobile ? 2.3 : 3.4}
-      onPointerMove={(e) => {
-        const { x, y } = e.intersections[0].uv;
-        setMouse({ x: (x - 0.5) * 2, y: (y - 0.5) * 2 });
-      }}
-      onPointerOver={() => setHover(true)}
-      onPointerOut={() => setHover(false)}
       castShadow
       receiveShadow
     >
@@ -54,18 +46,31 @@ function HeroCard() {
 }
 
 export default function Hero() {
+  const orbitTags = ["3D", "REACT", "UI", "FAST", "DESIGN"];
+
   return (
     <div className="hero-sec">
-      <Canvas shadows camera={{ position: [0, 0, 11], fov: 40 }}>
-        <ambientLight intensity={0.9} />
-        <directionalLight
-          position={[4, 5, 6]}
-          intensity={1.2}
-          castShadow
-        />
-        <Environment preset="city" />
-        <HeroCard />
-      </Canvas>
+      <div className="hero-stage">
+        <div className="hero-canvas">
+          <Canvas shadows camera={{ position: [0, 0, 11], fov: 40 }}>
+            <ambientLight intensity={0.9} />
+            <directionalLight position={[4, 5, 6]} intensity={1.2} castShadow />
+            <Environment preset="city" />
+            <HeroCard />
+          </Canvas>
+        </div>
+
+        {orbitTags.map((tag, index) => (
+          <span key={tag} className={`orbit-tag orbit-${index + 1}`}>
+            {tag}
+          </span>
+        ))}
+      </div>
+
+      <div className="scroll-cue">
+        <span className="line" />
+        <p>SCROLL</p>
+      </div>
     </div>
   );
 }

@@ -1,8 +1,19 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import '../assets/lion.css'
 
 export default function LionScene() {
+  const [isMobile, setIsMobile] = useState(false);
+
   useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth <= 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (isMobile) return;
+
     const script = document.createElement("script");
     script.src = "https://cdnjs.cloudflare.com/ajax/libs/three.js/r70/three.min.js";
     script.async = false;
@@ -17,7 +28,9 @@ export default function LionScene() {
       document.body.removeChild(script);
       document.body.removeChild(customScript);
     };
-  }, []);
+  }, [isMobile]);
+
+  if (isMobile) return null;
 
   return (
     <>

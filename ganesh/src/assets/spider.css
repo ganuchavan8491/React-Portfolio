@@ -1,0 +1,215 @@
+.spider-layer {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10002;
+  overflow: hidden;
+}
+
+.spider-2d {
+  --gait: 1020ms;
+  --stride: 0.8px;
+  --leg-amp: 3.2deg;
+  --body-bob: 0.3px;
+  position: absolute;
+  width: 84px;
+  height: 66px;
+  margin-left: -42px;
+  margin-top: -33px;
+  transform-origin: center;
+  will-change: transform;
+  opacity: 0.96;
+}
+
+.spider-shadow {
+  position: absolute;
+  left: 18px;
+  top: 49px;
+  width: 44px;
+  height: 9px;
+  border-radius: 50%;
+  background: rgba(9, 12, 18, 0.35);
+  filter: blur(3px);
+  animation: shadowPulse var(--gait) ease-in-out infinite alternate;
+}
+
+.spider-legs-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+.spider-core {
+  animation: bodyBob var(--gait) ease-in-out infinite alternate;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.leg {
+  transform-box: fill-box;
+  animation-duration: var(--gait);
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.leg path {
+  fill: none;
+  stroke: url(#legTexture);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.leg path:first-child {
+  stroke-width: 4.2;
+}
+
+.leg path:last-child {
+  stroke-width: 3.2;
+  opacity: 0.93;
+}
+
+.left {
+  animation-name: swingLeft;
+}
+
+.right {
+  animation-name: swingRight;
+}
+
+.leg-l1 {
+  transform-origin: 62px 54px;
+  animation-delay: 0ms;
+}
+
+.leg-l2 {
+  transform-origin: 59px 58px;
+  animation-delay: 100ms;
+}
+
+.leg-l3 {
+  transform-origin: 59px 63px;
+  animation-delay: 200ms;
+}
+
+.leg-l4 {
+  transform-origin: 62px 67px;
+  animation-delay: 300ms;
+}
+
+.leg-r1 {
+  transform-origin: 85px 52px;
+  animation-delay: 300ms;
+}
+
+.leg-r2 {
+  transform-origin: 88px 57px;
+  animation-delay: 200ms;
+}
+
+.leg-r3 {
+  transform-origin: 88px 62px;
+  animation-delay: 100ms;
+}
+
+.leg-r4 {
+  transform-origin: 84px 67px;
+  animation-delay: 0ms;
+}
+
+.abdomen {
+  fill: url(#abdomenGrad);
+  stroke: rgba(10, 10, 12, 0.65);
+  stroke-width: 0.9;
+}
+
+.abdomen-mark {
+  fill: rgba(196, 178, 140, 0.36);
+}
+
+.mark-2 {
+  fill: rgba(174, 158, 120, 0.32);
+}
+
+.mark-3 {
+  fill: rgba(214, 196, 154, 0.26);
+}
+
+.thorax {
+  fill: url(#thoraxGrad);
+  stroke: rgba(10, 10, 12, 0.7);
+  stroke-width: 0.9;
+}
+
+.joint-cover {
+  fill: rgba(30, 28, 27, 0.92);
+}
+
+.head {
+  fill: url(#headGrad);
+  stroke: rgba(10, 10, 12, 0.72);
+  stroke-width: 0.9;
+}
+
+.eye {
+  fill: #0b0c0f;
+  stroke: rgba(190, 190, 198, 0.35);
+  stroke-width: 0.35;
+}
+
+.fang {
+  fill: none;
+  stroke: #090a0d;
+  stroke-width: 1.3;
+  stroke-linecap: round;
+}
+
+@keyframes swingLeft {
+  from {
+    transform: rotate(calc(var(--leg-amp) * -1));
+  }
+  to {
+    transform: rotate(var(--leg-amp));
+  }
+}
+
+@keyframes swingRight {
+  from {
+    transform: rotate(var(--leg-amp));
+  }
+  to {
+    transform: rotate(calc(var(--leg-amp) * -1));
+  }
+}
+
+@keyframes bodyBob {
+  from {
+    transform: translateY(calc(var(--body-bob) * -1));
+  }
+  to {
+    transform: translateY(var(--body-bob));
+  }
+}
+
+@keyframes shadowPulse {
+  from {
+    opacity: 0.44;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 0.61;
+    transform: scale(1.03);
+  }
+}
+
+@media (max-width: 768px) {
+  .spider-2d {
+    width: 68px;
+    height: 54px;
+    margin-left: -34px;
+    margin-top: -27px;
+    opacity: 0.93;
+  }
+}

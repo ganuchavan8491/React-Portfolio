@@ -14,8 +14,8 @@ display: block;
     box-shadow: none !important;
 }
 
-@media (max-width: 480px) {
-    #word{
+@media (max-width: 768px) {
+    #world{
         display: none;
 }
 }

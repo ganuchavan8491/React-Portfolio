@@ -1,0 +1,85 @@
+.floating-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.float-item {
+  position: absolute;
+  will-change: transform;
+  opacity: 0.78;
+}
+
+.float-inner {
+  display: inline-flex;
+  animation-name: driftFloat;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.tech {
+  color: rgba(27, 53, 102, 0.78);
+  text-shadow: 0 8px 20px rgba(27, 53, 102, 0.14);
+}
+
+.html {
+  color: rgba(230, 95, 53, 0.85);
+}
+
+.css {
+  color: rgba(37, 107, 214, 0.82);
+}
+
+.react {
+  color: rgba(38, 157, 202, 0.86);
+}
+
+.python {
+  color: rgba(57, 119, 75, 0.82);
+}
+
+.tools {
+  color: rgba(87, 86, 116, 0.78);
+}
+
+.mobile {
+  color: rgba(41, 97, 159, 0.8);
+}
+
+.laptop {
+  color: rgba(50, 73, 113, 0.84);
+}
+
+.cube {
+  color: rgba(89, 94, 192, 0.78);
+}
+
+@keyframes driftFloat {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) rotate(-5deg) scale(1.05);
+  }
+  100% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+@media (max-width: 768px) {
+  .floating-layer {
+    z-index: 7;
+  }
+
+  .float-item {
+    opacity: 0.62;
+  }
+}
+
+@media (max-width: 480px) {
+  .mobile-hide {
+    display: none;
+  }
+}

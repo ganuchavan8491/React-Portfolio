@@ -8,6 +8,7 @@ import Skills from './components/Skills'
 import LionScene from './components/Lionscene'
 import Contact from './components/Contact'
 import Hero from './components/Hero'
+import FloatingDecor from './components/FloatingDecor'
 import catImg from './assets/images/cat.gif'
 import './App.css'
 
@@ -15,6 +16,7 @@ import './App.css'
 const App = () => {
   return (
     <div>
+      <FloatingDecor/>
       <img src={catImg} className="cat" alt="walking cat" />
       <Nav/>
       <Hero/>

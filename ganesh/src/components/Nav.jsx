@@ -3,6 +3,7 @@ import '../assets/nav.css'
 import profileImg from '../assets/images/navlogo.png'
 import NavParticles from './NavParticles'
 import cv from '../assets/files/GaneshResume.pdf'
+import { FaFileArrowDown, FaLinkedinIn } from "react-icons/fa6";
 
 const resume = () => {
   window.open( cv, "_blank");
@@ -15,8 +16,9 @@ const Nav = () => {
       <div className="nav">
         
         <div className="left-section">
-          <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.linkedin.com/in/ganeshchavan8491/" target="_blank" rel="noopener noreferrer" className="profile-link">
             <img src={profileImg} alt="Profile" className="profile-img" />
+            <span className="social-chip"><FaLinkedinIn /> Connect</span>
           </a>
         </div>
 
@@ -26,7 +28,10 @@ const Nav = () => {
         </div>
 
         <div className="right-section">
-          <button className="resume-btn" onClick={resume}>Resume</button>
+          <button className="resume-btn" onClick={resume}>
+            <FaFileArrowDown />
+            Resume
+          </button>
         </div>
 
       </div>
