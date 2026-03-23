@@ -1,40 +1,80 @@
-body{
-  margin: 0 auto;
+body {
+  margin: 0;
   padding: 0;
-  background: linear-gradient(180deg, #f4f8ff 0%, #eef4ff 45%, #fff5ea 100%) fixed !important;
+  /* Dynamic Moving Gradient Background */
+  background: linear-gradient(-45deg, #f4f8ff, #eef4ff, #fff5ea, #f0f7ff);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
+  min-height: 100vh;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .cat {
   position: fixed;
   bottom: 40px;
   width: 130px;
-  animation: walkMove 15s linear infinite;
-  pointer-events: none;
   z-index: 9999;
-  mix-blend-mode: multiply; /* important */
+  pointer-events: none;
+  
+  /* Styling & Effects */
+  mix-blend-mode: multiply;
+  /* Soft realistic shadow */
+  opacity: 0.9;
+  
+  /* Walk Animation */
+  animation: walkMove 18s linear infinite, bobbing 1s ease-in-out infinite;
 }
 
+/* 1. Horizontal Movement (Smooth) */
 @keyframes walkMove {
-  from { transform: translateX(calc(100vw + 200px)); }
-  to { transform: translateX(-200px); }
+  from { right: -200px; }
+  to { right: calc(100vw + 200px); }
 }
 
-.cat.flip {
-  transform: scaleX(-1);
+/* 2. Walking "Bounce" Effect (Realistic touch) */
+@keyframes bobbing {
+  0%, 100% { transform: translateY(0) scaleX(1); }
+  50% { transform: translateY(-5px) scaleX(1.02); }
 }
+
+/* Agar aap cat ko flip karna chahte hain (opposite direction) */
+.cat.flip {
+  transform: scaleX(-1) !important;
+}
+
+/* Hover effect: Jab mouse pass aaye (optional logic agar pointer-events enable karein) */
+.cat:hover {
+  filter: drop-shadow(0 0 10px rgba(64, 123, 255, 0.4)) brightness(1.1);
+  transition: all 0.3s ease;
+}
+
+/* --- Responsive Styling --- */
 
 /* Tablet */
 @media (max-width: 768px) {
   .cat {
-    bottom: 20px;
+    bottom: 30px;
     width: 100px;
+    animation-duration: 14s, 0.8s; /* Thoda fast mobile par */
   }
 }
 
 /* Mobile */
 @media (max-width: 480px) {
   .cat {
-    bottom: 10px;
-    width: 80px;
+    bottom: 15px;
+    width: 85px;
+    filter: drop-shadow(0 5px 8px rgba(0, 0, 0, 0.08));
+  }
+  
+  body {
+    /* Mobile par gradient thoda simple rakha hai performance ke liye */
+    background-size: 200% 200%;
   }
 }

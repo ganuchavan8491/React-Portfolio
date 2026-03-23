@@ -21,8 +21,8 @@ const App = () => {
       <Nav/>
       <Hero/>
       <Loader/>
-      <LionScene/>
       <Home/>
+      <LionScene/>
       <Skills/>
       <Work/>
       <Contact/>

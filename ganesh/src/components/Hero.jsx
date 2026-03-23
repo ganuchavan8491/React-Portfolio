@@ -1,6 +1,7 @@
 import React, { useRef, useState, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useTexture, Environment } from "@react-three/drei";
+import { useTexture, Environment, Float, ContactShadows } from "@react-three/drei";
+import * as THREE from "three";
 
 import heroDesk from "../assets/images/hero.png";
 import heroMob from "../assets/images/hero-mob.png";
@@ -8,68 +9,77 @@ import "../assets/hero.css";
 
 function HeroCard() {
   const [isMobile, setIsMobile] = useState(false);
+  const texture = useTexture(isMobile ? heroMob : heroDesk);
+  const ref = useRef();
 
   useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
     handleResize();
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const texture = useTexture(isMobile ? heroMob : heroDesk);
-  const ref = useRef();
-
   useFrame((state) => {
     if (!ref.current) return;
-
-    const t = state.clock.getElapsedTime();
-    const tx = Math.sin(t * 0.45) * 0.05;
-    const ty = Math.cos(t * 0.35) * 0.04;
-
-    ref.current.rotation.y += (tx - ref.current.rotation.y) * 0.1;
-    ref.current.rotation.x += (ty - ref.current.rotation.x) * 0.1;
+    // Mouse tracking effect
+    const { x, y } = state.mouse;
+    ref.current.rotation.y = THREE.MathUtils.lerp(ref.current.rotation.y, x * 0.4, 0.05);
+    ref.current.rotation.x = THREE.MathUtils.lerp(ref.current.rotation.x, -y * 0.4, 0.05);
   });
 
   return (
-    <mesh
-      ref={ref}
-      scale={isMobile ? 2.3 : 3.4}
-      castShadow
-      receiveShadow
-    >
-      <planeGeometry args={isMobile ? [1.6, 2.7] : [3.2, 1.8]} />
-      <meshStandardMaterial map={texture} roughness={0.2} />
-    </mesh>
+    <Float speed={2} rotationIntensity={0.5} floatIntensity={1}>
+      <mesh ref={ref} scale={isMobile ? 2.5 : 3.8} castShadow>
+        <planeGeometry args={isMobile ? [1.6, 2.7] : [3.2, 1.8]} />
+        {/* Transparent rounded corners effect ke liye map ke saath meshStandard use karein */}
+        <meshStandardMaterial 
+          map={texture} 
+          roughness={0.1} 
+          metalness={0.2}
+          transparent={true}
+        />
+      </mesh>
+    </Float>
   );
 }
 
 export default function Hero() {
-  const orbitTags = ["3D", "REACT", "UI", "FAST", "DESIGN"];
+  const orbitTags = ["3D VISUALS", "REACT JS", "UI/UX", "INTERACTIVE", "DESIGN"];
 
   return (
     <div className="hero-sec">
+      {/* Background Decor */}
+      <div className="bg-glow" />
+      
       <div className="hero-stage">
+        <div className="hero-content-overlay">
+          <h1 className="hero-title">CREATIVE <span>DEVELOPER</span></h1>
+        </div>
+
         <div className="hero-canvas">
-          <Canvas shadows camera={{ position: [0, 0, 11], fov: 40 }}>
-            <ambientLight intensity={0.9} />
-            <directionalLight position={[4, 5, 6]} intensity={1.2} castShadow />
-            <Environment preset="city" />
+          <Canvas camera={{ position: [0, 0, 10], fov: 35 }} dpr={[1, 2]}>
+            <ambientLight intensity={0.6} />
+            <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} intensity={2} />
+            <pointLight position={[-10, -10, -10]} intensity={1} />
+            <Environment preset="apartment" />
             <HeroCard />
+            <ContactShadows position={[0, -3.5, 0]} opacity={0.4} scale={10} blur={2} far={4.5} />
           </Canvas>
         </div>
 
         {orbitTags.map((tag, index) => (
-          <span key={tag} className={`orbit-tag orbit-${index + 1}`}>
+          <div key={tag} className={`orbit-tag orbit-${index + 1}`}>
+            <div className="tag-dot" />
             {tag}
-          </span>
+          </div>
         ))}
       </div>
 
       <div className="scroll-cue">
-        <span className="line" />
-        <p>SCROLL</p>
+        <div className="mouse">
+          <div className="wheel" />
+        </div>
+        <p>SCROLL TO EXPLORE</p>
       </div>
     </div>
   );
